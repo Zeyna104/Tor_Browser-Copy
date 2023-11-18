@@ -1,0 +1,208 @@
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
+@use '../utils/extend' as *;
+
+header {
+  background-color: $deep-purple;
+  color: $white;
+  nav {
+    padding: 1.5em;
+    .logo {
+      width: 5em;
+    }
+    .donate-btn {
+      height: 100%;
+      @include flexbox(center, flex-start, wrap);
+
+      a {
+        @extend %donate-btn;
+      }
+    }
+    .menu {
+      height: 100%;
+      @include flexbox(center, space-between, wrap);
+      &__nav-list {
+        flex: 1;
+        justify-content: center;
+
+        a {
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      &__lang {
+        &__list {
+          padding: 6px 12px;
+          position: relative;
+
+          @include flexbox(center, space-between, wrap, 0.6rem);
+          cursor: default;
+
+          border: 0.5px solid transparent;
+
+          &__icon {
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover {
+            border: 0.5px solid $dark-indigo;
+
+            .menu__lang__list__icon {
+              transform: rotate(180deg);
+            }
+
+            .menu__lang__list__abs {
+              visibility: visible;
+              opacity: 1;
+              transform: translate(0);
+            }
+          }
+
+          &__abs {
+            flex-direction: column;
+            align-items: flex-start;
+            @include position(absolute, $top: 100%, $left: 0);
+
+            background-color: $white;
+            color: $black;
+
+            padding: 0.6em 0;
+            width: 100%;
+            border-radius: 0.5em;
+
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(30px);
+
+            li {
+              width: 100%;
+              a {
+                width: 100%;
+                padding: 0.5em;
+
+                &:hover {
+                  background-color: rgb(236, 236, 236);
+                }
+              }
+            }
+          }
+        }
+
+        &__btn {
+          a {
+            border: 1px solid $white;
+            padding: 6px 12px;
+            border-radius: 0.5em;
+
+            font-weight: 600;
+
+            transition: $transition;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-indigo;
+              .menu__lang__btn__icon {
+                transform: translateY(2px);
+              }
+            }
+
+            .menu__lang__btn__icon {
+              transition: $transition;
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-lg {
+    display: none;
+  }
+
+  @media (max-width: 992px) {
+    .nav-fluid {
+      display: none;
+    }
+    .nav-lg {
+      display: block;
+
+      .donate-btn {
+        justify-content: center;
+      }
+      .asidebar {
+        height: 100%;
+        @include flexbox(center, flex-end, wrap);
+
+        font-size: $fs-300;
+
+        &__btn {
+          padding: 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          gap: 0.4rem;
+          border-radius: 0.5em;
+          line-height: 1;
+
+          transition: $transition;
+          &:hover {
+            background-color: $deep-plum;
+          }
+
+          &__icon {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .asidebar-list {
+        @include flexbox(flex-start, center, wrap, 0, column);
+        width: 100%;
+        font-size: $fs-400;
+        li {
+          width: 100%;
+          a {
+            width: 100%;
+            padding: 2rem 1rem;
+
+            &:hover {
+              background-color: $deep-plum;
+            }
+          }
+        }
+      }
+
+      .row:last-child {
+        max-height: 0;
+        visibility: hidden;
+
+        transition: all 0.5s ease-in-out;
+
+        &.asidebar--active {
+          max-height: 600px;
+          visibility: visible;
+        }
+      }
+
+      @media (max-width: 768px) {
+        [class^='col'] {
+          padding: 0;
+        }
+        .donate-btn {
+          font-size: $fs-100;
+        }
+        .asidebar {
+          font-size: $fs-200;
+        }
+      }
+      @media (max-width: 576px) {
+        .col-4 {
+          width: 50%;
+          flex: 50%;
+        }
+        .col-4:has(div.donate-btn) {
+          display: none;
+        }
+      }
+    }
+  }
+}

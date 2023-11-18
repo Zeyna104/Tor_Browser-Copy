@@ -1,0 +1,100 @@
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
+@use '../utils/extend' as *;
+
+footer {
+  background-color: $deep-purple;
+  color: $white;
+  padding: 5rem 0 1rem;
+  font-size: $fs-300;
+
+  .mission {
+    padding: 0 50px;
+    @include flexbox(flex-start, center, wrap, 5rem, column);
+    &__top {
+      h5 {
+        font-weight: 600;
+      }
+    }
+    &__signup {
+      p:first-child {
+        color: #e6d5ee;
+      }
+
+      &__link {
+        a {
+          padding: 6px 12px;
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: -1px;
+          background-color: $eggplant;
+          border-radius: 0.7rem;
+
+          transition: $transition;
+
+          &:hover {
+            background-color: #3c214858;
+          }
+        }
+      }
+    }
+  }
+
+  .links {
+    padding: 0 50px;
+    font-size: 1rem;
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .donate-btn {
+        a {
+          @extend %donate-btn;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .social {
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      flex-direction: row;
+
+      li {
+        font-size: 2rem;
+        flex: 25%;
+      }
+    }
+  }
+
+  form {
+    #lang-change {
+      padding: 6px 12px;
+      font-size: 1rem;
+      background-color: $primary-color;
+      border-radius: 0.3em;
+
+      transition: $transition;
+
+      &:hover {
+        background-color: #9955b658;
+      }
+
+      option {
+        display: inline-block;
+        padding: 6px 12px;
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    [class^='col-'] {
+      text-align: center;
+      margin: 3rem 0;
+      width: 100%;
+      flex: 100%;
+    }
+  }
+}

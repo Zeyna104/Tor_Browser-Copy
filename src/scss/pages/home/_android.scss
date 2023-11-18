@@ -1,0 +1,120 @@
+@use '../../utils/variable' as *;
+@use '../../utils/mixin' as *;
+@use '../../utils/extend' as *;
+
+#android {
+  margin-top: 100px;
+  background-color: $dark-indigo;
+  color: $white;
+  padding: 50px 0;
+
+  .downloads {
+    @include flexbox(flex-start, space-between, wrap, 2rem);
+    &__links {
+      flex: calc(60% - 1rem);
+      @include flexbox(center, center, wrap, 1rem, column);
+      justify-content: center;
+
+      &__logo {
+        a {
+          @extend %logo;
+          background-color: $deep-purple;
+        }
+      }
+      &__title {
+        text-align: center;
+        h1 {
+          font-size: $fs-600;
+        }
+      }
+      &__list {
+        font-size: $fs-300;
+
+        a {
+          background-color: $white;
+          border-radius: 0.3em;
+          color: $primary-color;
+
+          &:hover {
+            opacity: 0.8;
+          }
+          transition: $transition;
+        }
+        &__apk {
+          align-items: flex-start;
+          flex-direction: column;
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+          }
+          a {
+            padding: 4px 8px;
+
+            span.code-ff {
+              font-size: $fs-100;
+              background-color: $deep-purple;
+              padding: 0 0.5rem;
+              color: $white;
+              border-radius: 1rem;
+            }
+
+            &:last-child {
+              font-size: $fs-100;
+              background-color: $primary-color;
+              color: $white;
+            }
+          }
+        }
+        &__market {
+          margin-top: 2rem;
+          li {
+            a {
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__img {
+      flex: calc(40% - 1rem);
+      padding: 3rem;
+      &__inner {
+        width: 250px;
+        box-shadow: 0px 30px 100px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .link {
+    padding: 3rem 1rem;
+    text-align: center;
+    font-size: $fs-100;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .downloads {
+      &__links {
+        &__list {
+          &__apk {
+            align-items: center;
+          }
+        }
+      }
+      &__img {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 556px) {
+    .downloads__links__list__market {
+      flex-direction: column;
+    }
+  }
+}

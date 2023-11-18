@@ -1,0 +1,35 @@
+@use 'function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&Source+Sans+3:wght@300;400;500;600;700;800&display=swap');
+
+// Font-sizes
+$fs-100: toRem(14);
+$fs-200: toRem(18);
+$fs-300: toRem(20);
+$fs-400: toRem(24);
+$fs-500: toRem(28);
+$fs-600: toRem(40);
+$fs-700: toRem(56);
+$fs-800: toRem(88);
+
+// Colors
+$deep-orchid: #7d4698;
+$deep-plum: #673a7e;
+$deep-purple: #59316b;
+$dark-indigo: #401753;
+$eggplant: #3c2148;
+$warning: #ffbf00;
+$white: #fff;
+$black: #000;
+
+// Defaults
+$primary-color: $deep-orchid;
+
+$default-ff: 'Source Sans 3', sans-serif;
+$code--ff: 'Source Code Pro', sans-serif;
+
+$h1-fs: $fs-800;
+$h2-fs: $fs-700;
+$h3-fs: $fs-600;
+$h4-fs: $fs-500;
+
+$transition: all 0.25s ease-in-out;

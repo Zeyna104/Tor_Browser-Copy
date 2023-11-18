@@ -1,0 +1,805 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&Source+Sans+3:wght@300;400;500;600;700;800&display=swap");
+#support .donate__inner button, footer .links ul .donate-btn a, header nav .donate-btn a {
+  padding: 0.5rem;
+  background-color: #ffbf00;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 0.3em;
+  line-height: 1;
+  transition: all 0.25s ease-in-out;
+}
+#support .donate__inner button:hover, footer .links ul .donate-btn a:hover, header nav .donate-btn a:hover {
+  opacity: 0.8;
+}
+
+#hero .downloads-page__os__item__text__signature a[data-tooltip] {
+  position: relative;
+}
+#hero .downloads-page__os__item__text__signature a[data-tooltip]::before {
+  position: absolute;
+  left: 50%;
+  bottom: 150%;
+  transform: translateX(-50%);
+  content: attr(data-tooltip);
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 6px 12px;
+  border-radius: 0.5em;
+  color: #fff !important;
+  z-index: 2;
+  font-size: 12px;
+}
+#hero .downloads-page__os__item__text__signature a[data-tooltip]::after {
+  content: "\f0d7";
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  bottom: 90%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.9);
+}
+#hero .downloads-page__os__item__text__signature a[data-tooltip]::before, #hero .downloads-page__os__item__text__signature a[data-tooltip]::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+#android .downloads__links__logo a, #hero .downloads-page__os__item__icon__frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 150px;
+  height: 150px;
+  background-color: #401753;
+  border-radius: 50%;
+  font-size: 4.5em;
+}
+#android .downloads__links__logo a i, #hero .downloads-page__os__item__icon__frame i {
+  transition: all 0.25s ease-in-out;
+}
+#android .downloads__links__logo a:hover i, #hero .downloads-page__os__item__icon__frame:hover i {
+  transform: scale(1.1);
+}
+#android .downloads__links__logo a:hover:hover i, #hero .downloads-page__os__item__icon__frame:hover:hover i {
+  transform: scale(1.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  outline: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol,
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body,
+html {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+span {
+  padding: 0;
+  display: inline-block;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+select,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 5.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.row {
+  justify-content: space-between;
+}
+
+ul {
+  gap: 1rem;
+}
+
+.code-ff {
+  font-family: "Source Code Pro", sans-serif;
+}
+
+header {
+  background-color: #59316b;
+  color: #fff;
+}
+header nav {
+  padding: 1.5em;
+}
+header nav .logo {
+  width: 5em;
+}
+header nav .donate-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+header nav .menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header nav .menu__nav-list {
+  flex: 1;
+  justify-content: center;
+}
+header nav .menu__nav-list a:hover {
+  opacity: 0.8;
+}
+header nav .menu__lang__list {
+  padding: 6px 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  cursor: default;
+  border: 0.5px solid transparent;
+}
+header nav .menu__lang__list__icon {
+  transition: all 0.3s ease-in-out;
+}
+header nav .menu__lang__list:hover {
+  border: 0.5px solid #401753;
+}
+header nav .menu__lang__list:hover .menu__lang__list__icon {
+  transform: rotate(180deg);
+}
+header nav .menu__lang__list:hover .menu__lang__list__abs {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+header nav .menu__lang__list__abs {
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 0.6em 0;
+  width: 100%;
+  border-radius: 0.5em;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(30px);
+}
+header nav .menu__lang__list__abs li {
+  width: 100%;
+}
+header nav .menu__lang__list__abs li a {
+  width: 100%;
+  padding: 0.5em;
+}
+header nav .menu__lang__list__abs li a:hover {
+  background-color: rgb(236, 236, 236);
+}
+header nav .menu__lang__btn a {
+  border: 1px solid #fff;
+  padding: 6px 12px;
+  border-radius: 0.5em;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+header nav .menu__lang__btn a:hover {
+  background-color: #fff;
+  color: #401753;
+}
+header nav .menu__lang__btn a:hover .menu__lang__btn__icon {
+  transform: translateY(2px);
+}
+header nav .menu__lang__btn a .menu__lang__btn__icon {
+  transition: all 0.25s ease-in-out;
+}
+header .nav-lg {
+  display: none;
+}
+@media (max-width: 992px) {
+  header .nav-fluid {
+    display: none;
+  }
+  header .nav-lg {
+    display: block;
+  }
+  header .nav-lg .donate-btn {
+    justify-content: center;
+  }
+  header .nav-lg .asidebar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    font-size: 1.25rem;
+  }
+  header .nav-lg .asidebar__btn {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 0.4rem;
+    border-radius: 0.5em;
+    line-height: 1;
+    transition: all 0.25s ease-in-out;
+  }
+  header .nav-lg .asidebar__btn:hover {
+    background-color: #673a7e;
+  }
+  header .nav-lg .asidebar__btn__icon {
+    font-size: 30px;
+  }
+  header .nav-lg .asidebar-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  header .nav-lg .asidebar-list li {
+    width: 100%;
+  }
+  header .nav-lg .asidebar-list li a {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+  header .nav-lg .asidebar-list li a:hover {
+    background-color: #673a7e;
+  }
+  header .nav-lg .row:last-child {
+    max-height: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  header .nav-lg .row:last-child.asidebar--active {
+    max-height: 600px;
+    visibility: visible;
+  }
+}
+@media (max-width: 992px) and (max-width: 768px) {
+  header .nav-lg [class^=col] {
+    padding: 0;
+  }
+  header .nav-lg .donate-btn {
+    font-size: 0.875rem;
+  }
+  header .nav-lg .asidebar {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 992px) and (max-width: 576px) {
+  header .nav-lg .col-4 {
+    width: 50%;
+    flex: 50%;
+  }
+  header .nav-lg .col-4:has(div.donate-btn) {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #59316b;
+  color: #fff;
+  padding: 5rem 0 1rem;
+  font-size: 1.25rem;
+}
+footer .mission {
+  padding: 0 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  flex-direction: column;
+}
+footer .mission__top h5 {
+  font-weight: 600;
+}
+footer .mission__signup p:first-child {
+  color: #e6d5ee;
+}
+footer .mission__signup__link a {
+  padding: 6px 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  background-color: #3c2148;
+  border-radius: 0.7rem;
+  transition: all 0.25s ease-in-out;
+}
+footer .mission__signup__link a:hover {
+  background-color: rgba(60, 33, 72, 0.3450980392);
+}
+footer .links {
+  padding: 0 50px;
+  font-size: 1rem;
+}
+footer .links ul {
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .links ul .donate-btn a {
+  font-size: 1rem;
+}
+footer .links .social {
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+footer .links .social li {
+  font-size: 2rem;
+  flex: 25%;
+}
+footer form #lang-change {
+  padding: 6px 12px;
+  font-size: 1rem;
+  background-color: #7d4698;
+  border-radius: 0.3em;
+  transition: all 0.25s ease-in-out;
+}
+footer form #lang-change:hover {
+  background-color: rgba(153, 85, 182, 0.3450980392);
+}
+footer form #lang-change option {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #fff;
+  color: #000;
+}
+@media (max-width: 992px) {
+  footer [class^=col-] {
+    text-align: center;
+    margin: 3rem 0;
+    width: 100%;
+    flex: 100%;
+  }
+}
+
+#hero {
+  background-color: #59316b;
+  color: #fff;
+  padding-top: 50px;
+}
+#hero .title {
+  text-align: center;
+}
+#hero .downloads-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+}
+#hero .downloads-page__os {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+#hero .downloads-page__os__item, #hero .downloads-page__os__item__text {
+  flex: calc(25% - 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  flex-direction: column;
+}
+#hero .downloads-page__os__item__text {
+  gap: 0.5em;
+}
+#hero .downloads-page__os__item__text__btn a {
+  padding: 6px 12px;
+  background-color: #7d4698;
+  border-radius: 0.5em;
+  transition: all 0.25s ease-in-out;
+}
+#hero .downloads-page__os__item__text__btn a:hover {
+  background-color: rgba(125, 70, 152, 0.7294117647);
+}
+#hero .downloads-page__os__item__text__btn a:focus {
+  box-shadow: 0 0 0 0.2rem rgba(125, 70, 152, 0.5);
+}
+#hero .downloads-page__os__item__text__signature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+#hero .downloads-page__os__item__text__signature a {
+  text-decoration: underline;
+}
+#hero .downloads-page__os__item__text__signature a:has(i) {
+  font-size: 12px;
+}
+#hero .downloads-page__os__item__text__signature a[data-tooltip]:hover::before, #hero .downloads-page__os__item__text__signature a[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+#hero .downloads-page__links {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0;
+  width: 100%;
+}
+#hero .downloads-page__links a {
+  text-decoration: underline;
+}
+#hero .downloads-page__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 216px;
+}
+#hero .downloads-page__img a {
+  text-decoration: underline;
+}
+@media (max-width: 992px) {
+  #hero .downloads-page__os__item, #hero .downloads-page__os__item__text {
+    flex: calc(33.3333333333% - 2rem);
+  }
+}
+@media (max-width: 767px) {
+  #hero h1 {
+    font-size: 3.5rem;
+  }
+  #hero .downloads-page__os__item, #hero .downloads-page__os__item__text {
+    flex: calc(50% - 2rem);
+  }
+}
+@media (max-width: 556px) {
+  #hero .downloads-page__os__item, #hero .downloads-page__os__item__text {
+    flex: 100%;
+  }
+}
+
+#support {
+  font-size: 1.125rem;
+}
+#support .cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+#support .cards__card {
+  flex: calc(50% - 2rem);
+}
+#support .cards__card__img {
+  width: 66.6666666667%;
+  margin: 0 auto;
+}
+#support .cards__card__title {
+  color: #7d4698;
+}
+#support .cards__card__content {
+  font-weight: 500;
+}
+#support .cards__card__content a {
+  color: #7d4698;
+  font-weight: 700;
+}
+#support .cards__card__content a:hover {
+  color: #59316b;
+  text-decoration: underline !important;
+}
+#support .faqs {
+  color: #7d4698;
+  margin-bottom: 50px;
+}
+#support .faqs__faq {
+  flex-direction: column;
+  width: 100%;
+}
+#support .faqs__faq li {
+  width: 100%;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  padding: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+#support .faqs__faq li span:has(i) {
+  font-size: 1.5rem;
+}
+#support .faqs__faq li a {
+  text-decoration: underline;
+}
+#support .faqs__faq li a:hover {
+  color: #59316b;
+}
+#support .donate {
+  background-color: #7d4698;
+  padding: 3rem;
+  color: #fff;
+}
+#support .donate__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.25rem;
+}
+#support .donate__inner h2 {
+  font-weight: 300;
+}
+#support .donate__inner button {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  #support .cards__card {
+    text-align: center;
+    flex: 100%;
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 556px) {
+  #support .donate__inner h2 {
+    font-size: 2rem !important;
+  }
+}
+
+#android {
+  margin-top: 100px;
+  background-color: #401753;
+  color: #fff;
+  padding: 50px 0;
+}
+#android .downloads {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#android .downloads__links {
+  flex: calc(60% - 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+#android .downloads__links__logo a {
+  background-color: #59316b;
+}
+#android .downloads__links__title {
+  text-align: center;
+}
+#android .downloads__links__title h1 {
+  font-size: 2.5rem;
+}
+#android .downloads__links__list {
+  font-size: 1.25rem;
+}
+#android .downloads__links__list a {
+  background-color: #fff;
+  border-radius: 0.3em;
+  color: #7d4698;
+  transition: all 0.25s ease-in-out;
+}
+#android .downloads__links__list a:hover {
+  opacity: 0.8;
+}
+#android .downloads__links__list__apk {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#android .downloads__links__list__apk li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+#android .downloads__links__list__apk a {
+  padding: 4px 8px;
+}
+#android .downloads__links__list__apk a span.code-ff {
+  font-size: 0.875rem;
+  background-color: #59316b;
+  padding: 0 0.5rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+#android .downloads__links__list__apk a:last-child {
+  font-size: 0.875rem;
+  background-color: #7d4698;
+  color: #fff;
+}
+#android .downloads__links__list__market {
+  margin-top: 2rem;
+}
+#android .downloads__links__list__market li a {
+  padding: 0.5rem 1rem;
+}
+#android .downloads__img {
+  flex: calc(40% - 1rem);
+  padding: 3rem;
+}
+#android .downloads__img__inner {
+  width: 250px;
+  box-shadow: 0px 30px 100px rgba(0, 0, 0, 0.5);
+}
+#android .link {
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+#android .link a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 992px) {
+  #android .downloads__links__list__apk {
+    align-items: center;
+  }
+  #android .downloads__img {
+    display: none;
+  }
+}
+@media (max-width: 556px) {
+  #android .downloads__links__list__market {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

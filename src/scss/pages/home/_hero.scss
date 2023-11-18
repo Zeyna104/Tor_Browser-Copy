@@ -1,0 +1,118 @@
+@use '../../utils/variable' as *;
+@use '../../utils/mixin' as *;
+@use '../../utils/extend' as *;
+
+#hero {
+  background-color: $deep-purple;
+  color: $white;
+  // height: 100dvh;
+  padding-top: 50px;
+  .title {
+    text-align: center;
+  }
+  .downloads-page {
+    @include flexbox(center, center, wrap, 1rem, column);
+    &__os {
+      @include flexbox(flex-start, space-between, wrap, 2rem);
+      width: 100%;
+
+      &__item {
+        flex: calc(100% / 4 - 2rem);
+        @include flexbox(center, center, wrap, 1em, column);
+        &__icon {
+          &__frame {
+            @extend %logo;
+          }
+        }
+
+        &__text {
+          @extend .downloads-page__os__item;
+          gap: 0.5em;
+          &__btn {
+            a {
+              padding: 6px 12px;
+              background-color: $primary-color;
+              border-radius: 0.5em;
+
+              transition: $transition;
+
+              &:hover {
+                background-color: #7d4698ba;
+              }
+
+              &:focus {
+                box-shadow: 0 0 0 0.2rem rgba(125, 70, 152, 0.5);
+              }
+            }
+          }
+          &__signature {
+            @include flexbox(center, flex-start, wrap, 0.8em);
+            a {
+              text-decoration: underline;
+              &:has(i) {
+                font-size: 12px;
+              }
+              &[data-tooltip] {
+                @extend %tooltip;
+
+                &:hover {
+                  &::before,
+                  &::after {
+                    opacity: 1;
+                    visibility: visible;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__links {
+      padding: 3rem;
+      @include flexbox(center, space-evenly, wrap, 0);
+      width: 100%;
+      a {
+        text-decoration: underline;
+      }
+    }
+    &__img {
+      @include flexbox(center, center, wrap);
+
+      padding: 3rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 216px;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .downloads-page__os {
+      &__item {
+        flex: calc(100% / 3 - 2rem);
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    h1 {
+      font-size: $h2-fs;
+    }
+    .downloads-page__os {
+      &__item {
+        flex: calc(100% / 2 - 2rem);
+      }
+    }
+  }
+  @media (max-width: 556px) {
+    .downloads-page__os {
+      &__item {
+        flex: 100%;
+      }
+    }
+  }
+}

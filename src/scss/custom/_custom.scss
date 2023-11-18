@@ -1,0 +1,18 @@
+@use './../utils/variable' as *;
+@use './../utils/mixin' as *;
+
+.container {
+  max-width: 1140px;
+}
+
+.row {
+  justify-content: space-between;
+}
+
+ul {
+  gap: 1rem;
+}
+
+.code-ff {
+  font-family: $code--ff;
+}
